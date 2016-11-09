@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 echo "-----> Extracting ALPR"
-mv openalpr.tar /app/.apt/
-cd /app/.apt/
+mv openalpr.tar /
+cd /
 tar -xvf openalpr.tar
