@@ -1,14 +1,5 @@
 #!/usr/bin/env bash
-echo "-----&gt; Downloading ALPR"
-wget https://github.com/hard2hack/openalpr/archive/master.zip
-echo "-----&gt; Extracting ALPR"
-unzip master.zip
-mkdir -p openalpr-master/src/build
-cd openalpr-master/src/build
-
-echo "-----&gt; Compiling ALPR"
-cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_SYSCONFDIR:PATH=/etc ..
-make -j2
-make install
-
-echo "-----&gt; ALPR installed"
+echo "-----> Extracting ALPR"
+mv openalpr.tar /app/.apt/
+cd /app/.apt/
+tar -xvf openalpr.tar
