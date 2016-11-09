@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+echo "-----&gt; Installing ALPR dependencies"
+apt-get update && apt-get install -y \
+    build-essential \
+    cmake \
+    curl \
+    git \
+    libcurl3-dev \
+    libleptonica-dev \
+    liblog4cplus-dev \
+    libopencv-dev \
+    libtesseract-dev \
+    wget \
+    unzip
+
+
+echo "-----&gt; Downloading ALPR"
+wget https://github.com/openalpr/openalpr/archive/master.zip
+echo "-----&gt; Extracting ALPR"
+unzip master.zip
+mkdir -p openalpr-master/src/build
+cd openalpr-master/src/build
+
+echo "-----&gt; Compiling ALPR"
+cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_SYSCONFDIR:PATH=/etc ..
+make -j2
+make install
+
+echo "-----&gt; ALPR installed"
