@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 echo "-----> Extracting ALPR"
-mv openalpr.tar /
-cd /
-tar -xvf openalpr.tar
+tar -xvf ./openalpr.tar
